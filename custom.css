@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
+.navbar-light .navbar-nav .nav-item .nav-link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    line-height: 23px;
+    padding: 10px 25px;
+    color: #000;
+    font-weight: 700;
+}
+
+.navbar-light .navbar-nav .nav-item .nav-link:hover {
+    border-bottom: 2px solid rgba(0, 132, 255);
+    color: rgba(0, 132, 255);
+    /* text-decoration: underline; */
+    margin-bottom: -2px;
+    /* width: 70vw; */
+}
+
+.navbar-light .navbar-nav a.mega-nav-link[data-mega-target-sub-menu] {
+    line-height: 1em;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.navbar-light .navbar-nav a.mega-nav-link[data-mega-target-sub-menu]:hover {
+    border-bottom: none;
+    margin-bottom: auto;
+}
+
+.megamenu {
+    position: static;
+}
+
+.megamenu .dropdown-menu {
+    background: none;
+    border: none;
+    width: 100%;
+}
+
+
+/* PX */
+
+.mega-sub-menu {
+    display: none;
+    border-left: none;
+    border-top: 2px solid rgb(139, 142, 145);
+    height: 100%;
+}
+
+@media (min-width: 756px) {
+    .mega-sub-menu {
+        display: none;
+        border-left: 1px solid rgb(236, 239, 241);
+        border-top: none;
+        height: 100%;
+    }
+    .navbar-light .navbar-nav .nav-item .nav-link:hover {
+        border-bottom: 2px solid rgba(0, 132, 255);
+        color: rgba(0, 132, 255);
+        /* text-decoration: underline; */
+        margin-bottom: -2px;
+        width: auto;
+    }
+}
+
+.navbar-light .navbar-nav .mega-nav-link:hover {
+    background-color: rgb(236, 239, 241);
+    color: rgba(0, 132, 255);
+}
+
+.hover-active {
+    /* content: "\276F" !important;
+            border: none;
+            position: absolute;
+            right: 20px; */
+    background-color: rgb(236, 239, 241);
+    color: rgb(0, 132, 255);
+}
+
+.navbar-light .navbar-nav a.mega-nav-link[data-mega-target-sub-menu]:not([data-mega-target-sub-menu=""]):hover::after {
+    content: "\276F" !important;
+    border: none;
+    position: absolute;
+    right: 20px;
+    background-color: rgb(236, 239, 241);
+    color: rgb(0, 132, 255);
+}
+
+a.navbar-brand>img {
+    height: 28px;
+    width: 115px;
+}
