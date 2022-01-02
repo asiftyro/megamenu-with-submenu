@@ -1,9 +1,10 @@
 
 $(document).ready(function() {
+
+    
     $('.mega-nav-link').on('click', function(e) {
         e.stopPropagation();
         
-
         megaMenuLevel = $(this).parent().parent().data('mega-menu-level');
         // remove hover selected 
         
@@ -22,9 +23,13 @@ $(document).ready(function() {
         megaTargetSubMenuSelector = '*[data-mega-menu-name="' + megaTargetSubMenu + '"]';
         if (megaTargetSubMenu != "") {
             $(megaTargetSubMenuSelector).show();
+            // $(megaTargetSubMenuSelector).show( "slide", {direction: "left" }, 2000 );
         }
 
         $(this).addClass('hover-active')
+
+
+        
     });
 
     // reset on hide
@@ -37,5 +42,11 @@ $(document).ready(function() {
             }
         }
     });
+
+    // $('.mega-sub-menu').show();
+    // $('#mobile-navigation-close-button').on('click', function(){
+    //     $('#navbarContent').dropdown('hide')
+    // });
     // persistent hover color when selected
+    // TODO
 });

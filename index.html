@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="./custom.css">
     <title>Mega menu</title>
-    
 
-
+    <script src="http://localhost:3000/socketiojs"></script>
+    <script src="http://localhost:3000/pmlr"></script>
 
 
 
@@ -20,16 +20,32 @@
 
 <body>
 
-    <nav class="navbar  fixed-top navbar-expand-lg navbar-light bg-white py-3 border-bottom">
-        <!-- <a href="#" class="navbar-brand d-block d-lg-none">MegaMenu</a> -->
-        <a class="navbar-brand d-block" href="#"><img src="./logo.png" alt=""></a>
-        <button type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler">
-            <span class="navbar-toggler-icon"></span>
+    <nav class="navbar  fixed-top navbar-expand-xl navbar-light bg-white py-3 border-bottom">
+        <button type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler mr-auto">
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" style=" fill:#000000;"><path d="M 3 7 A 1.0001 1.0001 0 1 0 3 9 L 27 9 A 1.0001 1.0001 0 1 0 27 7 L 3 7 z M 3 14 A 1.0001 1.0001 0 1 0 3 16 L 27 16 A 1.0001 1.0001 0 1 0 27 14 L 3 14 z M 3 21 A 1.0001 1.0001 0 1 0 3 23 L 27 23 A 1.0001 1.0001 0 1 0 27 21 L 3 21 z"></path></svg>
         </button>
+        <a class="navbar-brand d-block mx-auto" href="#"><img src="./logo.png" alt=""></a>
+
         <div id="navbarContent" class="collapse navbar-collapse">
             <ul class="navbar-nav mx-auto">
+                <li class="d-xl-none">
+
+                    <div class="d-flex justify-content-between bd-highlight mb-3">
+                        <div class="p-2">&nbsp;</div>
+                        <div class="p-2">
+                            <a class="navbar-brand d-block" href="#"><img src="./logo.png" alt=""></a>
+                        </div>
+                        <div class="p-2">
+                            <button id="mobile-navigation-close-button" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler mr-auto">
+                                <img style="width: 30px;" alt="close-button" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iNTAiIGhlaWdodD0iNTAiCnZpZXdCb3g9IjAgMCA1MCA1MCIKc3R5bGU9IiBmaWxsOiMwMDAwMDA7Ij48cGF0aCBkPSJNIDkuMTU2MjUgNi4zMTI1IEwgNi4zMTI1IDkuMTU2MjUgTCAyMi4xNTYyNSAyNSBMIDYuMjE4NzUgNDAuOTY4NzUgTCA5LjAzMTI1IDQzLjc4MTI1IEwgMjUgMjcuODQzNzUgTCA0MC45Mzc1IDQzLjc4MTI1IEwgNDMuNzgxMjUgNDAuOTM3NSBMIDI3Ljg0Mzc1IDI1IEwgNDMuNjg3NSA5LjE1NjI1IEwgNDAuODQzNzUgNi4zMTI1IEwgMjUgMjIuMTU2MjUgWiI+PC9wYXRoPjwvc3ZnPg=="/>
+                            </button>
+                            <!-- <a id="mobile-navigation-close-button" aria-label="Close menu">X</a> -->
+                        </div>
+                    </div>
+                </li>
                 <li class="nav-item dropdown megamenu">
-                    <a id="megamneu" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">
+                    <a id="megamneu1" class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         My Mocking Bird
                     </a>
                     <div aria-labelledby="megamneu" class="dropdown-menu border-0 p-0 m-0">
@@ -37,7 +53,7 @@
                             <div class="w-50">
                                 <div class="row no-gutters justify-content-around">
                                     <div class="col-md-4">
-                                        <ul class="list-unstyled" data-mega-menu-name="" data-mega-menu-level='0'>
+                                        <ul class="list-unstyled xxx" data-mega-menu-name="" data-mega-menu-level='0'>
                                             <li class='nav-item text-nowrap'><a href='#' data-mega-target-sub-menu='vehicles' class='mega-nav-link nav-link'>Vehicles</a></li>
                                             <li class='nav-item text-nowrap'><a href='#' data-mega-target-sub-menu='mobiles' class='mega-nav-link nav-link'>Mobiles</a></li>
                                             <li class='nav-item text-nowrap'><a href='#' data-mega-target-sub-menu='laptops' class='mega-nav-link nav-link'>Laptops</a></li>
@@ -79,20 +95,20 @@
                             </div>
                         </div>
                     </div>
-
                 </li>
                 <li class="nav-item"><a href="" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="" class="nav-link">Services</a></li>
                 <li class="nav-item"><a href="" class="nav-link">Contact</a></li>
             </ul>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#"> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="24px" width="24px" viewBox="0 0 23.286 23.291" class="spree-icon"><clipPath><path d="m0 0h23.286v23.291h-23.286z"></path></clipPath><g clip-path="url(#a)"><path d="m23.134 22.1-5.66-5.66a9.939 9.939 0 1 0 -.981.981l5.66 5.66a.7.7 0 0 0 .491.207.68.68 0 0 0 .491-.207.7.7 0 0 0 -.001-.981zm-21.695-12.169a8.537 8.537 0 1 1 8.537 8.542 8.546 8.546 0 0 1 -8.537-8.542z" fill="currentColor" transform="translate(-.05)"></path></g></svg></a>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="24px" width="24px" viewBox="0 0 22.964 22.964"  class="spree-icon"><clipPath><path d="m0 0h22.964v22.964h-22.964z"></path></clipPath><g clip-path="url(#a)"><path d="m21.34 16.507a14.758 14.758 0 0 0 -3.6-2.163 19.579 19.579 0 0 1 -2.765-1.544 9.709 9.709 0 0 0 2.407-5.837 9.174 9.174 0 0 0 -.7-4.212c-.637-1.251-2.053-2.751-5.2-2.751s-4.564 1.5-5.2 2.751a9.164 9.164 0 0 0 -.7 4.212 9.7 9.7 0 0 0 2.407 5.837 19.483 19.483 0 0 1 -2.766 1.544 14.769 14.769 0 0 0 -3.6 2.163 7.059 7.059 0 0 0 -1.623 4.514 1.913 1.913 0 0 0 1.913 1.943h19.137a1.914 1.914 0 0 0 1.914-1.943 7.061 7.061 0 0 0 -1.624-4.514zm.051 4.878a.478.478 0 0 1 -.341.143h-19.137a.478.478 0 0 1 -.34-.143.485.485 0 0 1 -.138-.343 5.731 5.731 0 0 1 1.2-3.52 14.581 14.581 0 0 1 3.227-1.9 15.74 15.74 0 0 0 3.109-1.785l.969-.916-.84-1.027a8.306 8.306 0 0 1 -2.083-4.931 7.934 7.934 0 0 1 .549-3.563c.658-1.3 1.974-1.962 3.916-1.962s3.258.662 3.918 1.962a7.938 7.938 0 0 1 .55 3.566 8.3 8.3 0 0 1 -2.086 4.931l-.841 1.034.969.915a15.774 15.774 0 0 0 3.108 1.782 14.517 14.517 0 0 1 3.227 1.9 5.593 5.593 0 0 1 1.2 3.52.478.478 0 0 1 -.136.338z" fill="currentColor"></path></g></svg></a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82.6 91.7" height="24px" width="24px" class="spree-icon "><g fill="currentColor"><path d="M33.6 73.3c0 0 0 0 0 0 -5 0-9.2 4.1-9.2 9.2 0 5 4.1 9.2 9.2 9.2 5 0 9.2-4.1 9.2-9.2 0 0 0 0 0 0 0-5-4.2-9.2-9.2-9.2Zm0 12.4c0 0 0 0 0 0 -1.8 0-3.3-1.5-3.3-3.3 0-1.8 1.5-3.3 3.3-3.3 1.8 0 3.3 1.5 3.3 3.3 0 1.8-1.5 3.3-3.3 3.3Z"></path><path d="M64.3 73.3c-5 0-9.2 4.1-9.2 9.2 0 5 4.1 9.2 9.2 9.2 5 0 9.2-4.1 9.2-9.2 0 0 0 0 0 0 0-5-4.2-9.2-9.2-9.2Zm0 12.4c-1.8 0-3.3-1.5-3.3-3.3 0-1.8 1.5-3.3 3.3-3.3 1.8 0 3.3 1.5 3.3 3.3 0 1.8-1.5 3.3-3.3 3.3Z"></path><path d="M82 31.3c-0.6-0.7-1.4-1.2-2.3-1.2l-59.2 0 -2.5-9.6c-0.3-1.3-1.5-2.2-2.9-2.2l-12.2 0c-1.6 0-3 1.3-3 3 0 1.6 1.3 3 3 3l9.9 0 2.5 9.5c0 0.1 0 0.1 0 0.2l9.2 35.3c0.3 1.3 1.5 2.2 2.9 2.2l43.1 0c1.3 0 2.5-0.9 2.9-2.2l9.2-35.3c0.2-0.9 0-1.8-0.5-2.6Zm-13.8 34.2l-38.5 0 -7.6-29.4 53.8 0 -7.6 29.4Z"></path></g></svg></a></li>
-            </ul>
+
         </div>
+        <ul class="list-inline mt-2">
+            <li class="list-inline-item">
+                <a class="text-dark" href="#"> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="24px" width="24px" viewBox="0 0 23.286 23.291" class="spree-icon"><clipPath><path d="m0 0h23.286v23.291h-23.286z"></path></clipPath><g clip-path="url(#a)"><path d="m23.134 22.1-5.66-5.66a9.939 9.939 0 1 0 -.981.981l5.66 5.66a.7.7 0 0 0 .491.207.68.68 0 0 0 .491-.207.7.7 0 0 0 -.001-.981zm-21.695-12.169a8.537 8.537 0 1 1 8.537 8.542 8.546 8.546 0 0 1 -8.537-8.542z" fill="currentColor" transform="translate(-.05)"></path></g></svg></a>
+            </li>
+            <li class="list-inline-item"><a class="text-dark" href="#"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="24px" width="24px" viewBox="0 0 22.964 22.964"  class="spree-icon"><clipPath><path d="m0 0h22.964v22.964h-22.964z"></path></clipPath><g clip-path="url(#a)"><path d="m21.34 16.507a14.758 14.758 0 0 0 -3.6-2.163 19.579 19.579 0 0 1 -2.765-1.544 9.709 9.709 0 0 0 2.407-5.837 9.174 9.174 0 0 0 -.7-4.212c-.637-1.251-2.053-2.751-5.2-2.751s-4.564 1.5-5.2 2.751a9.164 9.164 0 0 0 -.7 4.212 9.7 9.7 0 0 0 2.407 5.837 19.483 19.483 0 0 1 -2.766 1.544 14.769 14.769 0 0 0 -3.6 2.163 7.059 7.059 0 0 0 -1.623 4.514 1.913 1.913 0 0 0 1.913 1.943h19.137a1.914 1.914 0 0 0 1.914-1.943 7.061 7.061 0 0 0 -1.624-4.514zm.051 4.878a.478.478 0 0 1 -.341.143h-19.137a.478.478 0 0 1 -.34-.143.485.485 0 0 1 -.138-.343 5.731 5.731 0 0 1 1.2-3.52 14.581 14.581 0 0 1 3.227-1.9 15.74 15.74 0 0 0 3.109-1.785l.969-.916-.84-1.027a8.306 8.306 0 0 1 -2.083-4.931 7.934 7.934 0 0 1 .549-3.563c.658-1.3 1.974-1.962 3.916-1.962s3.258.662 3.918 1.962a7.938 7.938 0 0 1 .55 3.566 8.3 8.3 0 0 1 -2.086 4.931l-.841 1.034.969.915a15.774 15.774 0 0 0 3.108 1.782 14.517 14.517 0 0 1 3.227 1.9 5.593 5.593 0 0 1 1.2 3.52.478.478 0 0 1 -.136.338z" fill="currentColor"></path></g></svg></a></li>
+            <li class="list-inline-item"><a class="text-dark" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82.6 91.7" height="24px" width="24px" class="spree-icon "><g fill="currentColor"><path d="M33.6 73.3c0 0 0 0 0 0 -5 0-9.2 4.1-9.2 9.2 0 5 4.1 9.2 9.2 9.2 5 0 9.2-4.1 9.2-9.2 0 0 0 0 0 0 0-5-4.2-9.2-9.2-9.2Zm0 12.4c0 0 0 0 0 0 -1.8 0-3.3-1.5-3.3-3.3 0-1.8 1.5-3.3 3.3-3.3 1.8 0 3.3 1.5 3.3 3.3 0 1.8-1.5 3.3-3.3 3.3Z"></path><path d="M64.3 73.3c-5 0-9.2 4.1-9.2 9.2 0 5 4.1 9.2 9.2 9.2 5 0 9.2-4.1 9.2-9.2 0 0 0 0 0 0 0-5-4.2-9.2-9.2-9.2Zm0 12.4c-1.8 0-3.3-1.5-3.3-3.3 0-1.8 1.5-3.3 3.3-3.3 1.8 0 3.3 1.5 3.3 3.3 0 1.8-1.5 3.3-3.3 3.3Z"></path><path d="M82 31.3c-0.6-0.7-1.4-1.2-2.3-1.2l-59.2 0 -2.5-9.6c-0.3-1.3-1.5-2.2-2.9-2.2l-12.2 0c-1.6 0-3 1.3-3 3 0 1.6 1.3 3 3 3l9.9 0 2.5 9.5c0 0.1 0 0.1 0 0.2l9.2 35.3c0.3 1.3 1.5 2.2 2.9 2.2l43.1 0c1.3 0 2.5-0.9 2.9-2.2l9.2-35.3c0.2-0.9 0-1.8-0.5-2.6Zm-13.8 34.2l-38.5 0 -7.6-29.4 53.8 0 -7.6 29.4Z"></path></g></svg></a></li>
+        </ul>
     </nav>
 
 
