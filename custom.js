@@ -2,7 +2,7 @@
 $(document).ready(function() {
 
     
-    $('.mega-nav-link').on('click', function(e) {
+    $('.mega-nav-link').on('mouseover', function(e) {
         e.stopPropagation();
         
         megaMenuLevel = $(this).parent().parent().data('mega-menu-level');
