@@ -2,25 +2,65 @@
 let prevMenuLevel = -1;
 $(document).ready(function () {
 
-    // $('.mega-nav-link').on('mouseleave', function(e) {
+    $('#megamneu1').on('mouseover', function (e) {
+
+
+        // $('.dropdown').addClass('show');
+        $('.dropdown-menu').addClass('show');
+
+    });
+
+
+
+    $(window).click(function(e) {
+
+           $('.dropdown-menu').removeClass("show"); 
+           e.preventDefault();
+           
+     });
+      $('.dropdown-menu').click(function(event){
+          event.stopPropagation();
+      });
+
+
+    // $('.megamenu-area').on('mouseleave', function (e) {
+
     //     e.stopPropagation();
-    //     megaMenuLevel = $(this).parent().parent().data('mega-menu-level');
-    //     console.log('leave', prevMenuLevel, megaMenuLevel)
-    //     prevMenuLevel = megaMenuLevel;
-
-    // remove hover selected 
-
-    // megaMenuLevelToHideSelector = '*[data-mega-menu-level="' + megaMenuLevel + '"]';
-    // $(megaMenuLevelToHideSelector).find('.mega-nav-link').removeClass('hover-active')
-
-    // for (level = megaMenuLevel + 1; level <= 2; level++) {
-    //     if (level == 0) continue;
-    //     megaMenuLevelToHideSelector = '*[data-mega-menu-level="' + level + '"]';
-    //     $(megaMenuLevelToHideSelector).hide();
-    //     $(megaMenuLevelToHideSelector).find('.mega-nav-link').removeClass('hover-active')
-
-    // }
+    //     console.log("Oho");
+    //     $('.dropdown').removeClass('show');
+    //     $('.dropdown-menu').removeClass('show');
     // });
+    // document.querySelectorAll('.navbar .nav-item').forEach(function(everyitem){
+
+    // 	everyitem.addEventListener('mouseover', function(e){
+
+    // 		let el_link = this.querySelector('a[data-bs-toggle]');
+
+    // 		if(el_link != null){
+    // 			let nextEl = el_link.nextElementSibling;
+    // 			el_link.classList.add('show');
+    // 			nextEl.classList.add('show');
+    // 		}
+
+    // 	});
+    // 	everyitem.addEventListener('mouseleave', function(e){
+    // 		let el_link = this.querySelector('a[data-bs-toggle]');
+
+    // 		if(el_link != null){
+    // 			let nextEl = el_link.nextElementSibling;
+    // 			el_link.classList.remove('show');
+    // 			nextEl.classList.remove('show');
+    // 		}
+
+
+    // 	})
+    // });
+
+
+
+
+
+
 
     $('.mega-nav-link').on('mouseenter', function (e) {
         e.stopPropagation();
@@ -79,16 +119,9 @@ $(document).ready(function () {
                     $(megaMenuLevelToHideSelector).hide();
                 }
             }
-
-            // $('#megamneu1').dropdown('hide')
         }
+
     };
 
 
-    // $('.mega-sub-menu').show();
-    // $('#mobile-navigation-close-button').on('click', function(){
-    //     $('#navbarContent').dropdown('hide')
-    // });
-    // persistent hover color when selected
-    // TODO
 });
